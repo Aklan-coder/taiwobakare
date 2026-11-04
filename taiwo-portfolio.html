@@ -1,0 +1,634 @@
+<title>Taiwo Bakare-Abidola</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: full-bleed deep-water hero (animated alginate beads soaking up methylene-blue dye), then alternating bands — stats strip, bento research grid, rail timeline, dense credentials. */
+:root{
+  --bg:#f2f6f7; --surface:#ffffff; --ink:#0d1f26; --muted:#4f656d; --line:#d3e0e3;
+  --accent:#1f5fb0; --accent-soft:#e2ecf8; --bead:#c0812f;
+  --deep:#06141c; --deep-2:#0b2531; --deep-ink:#e6f2f5; --deep-muted:#93b2bb; --dye:#3d8bff; --glow:#f0b45e;
+  --f-display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --f-body:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --s-1:.8125rem; --s0:1rem; --s1:1.2rem; --s2:1.6rem; --s3:clamp(2rem,4vw,2.9rem); --s4:clamp(2.9rem,8.5vw,6.2rem);
+  --w:72rem; --g:max(16px, env(safe-area-inset-left, 0px)); --gr:max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#081419;--surface:#0f2029;--ink:#e3eef1;--muted:#97aeb5;--line:#1f3640;--accent:#74abf0;--accent-soft:#132d47;--bead:#e0a457;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#081419;--surface:#0f2029;--ink:#e3eef1;--muted:#97aeb5;--line:#1f3640;--accent:#74abf0;--accent-soft:#132d47;--bead:#e0a457;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:var(--s0);line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--deep)}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--glow);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;line-height:1.05;margin:0;letter-spacing:-.02em}
+p{margin:0}
+.wrap{max-width:var(--w);margin-inline:auto;padding-left:var(--g);padding-right:var(--gr)}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.chip{display:inline-block;font-size:var(--s-1);padding:.3rem .7rem;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:var(--surface);text-decoration:none;transition:border-color .2s,color .2s}
+a.chip:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ---------- top bar ---------- */
+header.bar{position:sticky;top:env(safe-area-inset-top, 0px);z-index:6;background:color-mix(in srgb,var(--deep) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+header.bar .wrap{display:flex;align-items:center;gap:1.75rem;padding-block:.8rem}
+.mark{display:flex;align-items:center;gap:.6rem;color:var(--deep-ink);text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:1.05rem;white-space:nowrap}
+.mark i{width:1.9rem;height:1.9rem;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:.75rem;background:radial-gradient(circle at 35% 30%,#ffd79a,var(--glow) 45%,#8a5418);color:var(--deep);font-weight:800}
+nav{min-width:0;flex:1}
+nav ul{display:flex;gap:1.3rem;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none;justify-content:flex-end}
+nav ul::-webkit-scrollbar{display:none}
+nav a{font-size:var(--s-1);font-weight:500;color:var(--deep-muted);text-decoration:none;white-space:nowrap;transition:color .2s}
+nav a:hover{color:var(--deep-ink)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--deep);color:var(--deep-ink);overflow:hidden;isolation:isolate}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,var(--deep) 18%,rgba(6,20,28,.55) 55%,rgba(6,20,28,.15))}
+.hero .wrap{padding-block:clamp(4rem,10vw,7.5rem) clamp(3rem,7vw,5rem)}
+.hero .eyebrow{color:var(--glow)}
+.hero h1{font-size:var(--s4);font-weight:800;line-height:.92;margin-block:1rem 1.25rem;max-width:12ch}
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1.5px var(--deep-ink)}
+.creds{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.creds b{font-family:var(--f-mono);font-weight:500;font-size:.8rem;padding:.3rem .65rem;border-radius:4px;background:rgba(240,180,94,.14);color:var(--glow);border:1px solid rgba(240,180,94,.35)}
+.creds span{color:var(--deep-muted);font-size:.95rem}
+.lede{margin-top:1.6rem;font-size:clamp(1.05rem,1.7vw,1.3rem);max-width:38rem;color:var(--deep-ink);line-height:1.55}
+.lede em{font-style:normal;color:var(--dye);font-weight:600}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.3rem;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.glow{background:var(--glow);color:var(--deep)}
+.btn.line{color:var(--deep-ink);border:1px solid rgba(230,242,245,.3)}
+.btn.line:hover{border-color:var(--deep-ink)}
+.btn.solid{background:var(--accent);color:var(--bg)}
+.btn.out{color:var(--accent);border:1px solid var(--accent)}
+.btn svg{width:1rem;height:1rem}
+.legend{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:3rem;font-family:var(--f-mono);font-size:.72rem;color:var(--deep-muted);letter-spacing:.04em}
+.legend span{display:flex;align-items:center;gap:.45rem}
+.legend i{width:.7rem;height:.7rem;border-radius:50%;display:inline-block}
+
+/* ---------- stats ---------- */
+.stats{background:var(--deep-2);color:var(--deep-ink);border-top:1px solid rgba(255,255,255,.06)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{padding-block:1.6rem;padding-inline:1.25rem;border-left:1px solid rgba(255,255,255,.08);min-width:0}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-family:var(--f-display);font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;line-height:1;color:var(--deep-ink);font-variant-numeric:tabular-nums}
+.stat b small{font-size:.5em;color:var(--glow);font-weight:600;margin-left:.15em}
+.stat span{font-size:var(--s-1);color:var(--deep-muted)}
+
+/* ---------- sections ---------- */
+section.block{padding-block:clamp(3.5rem,8vw,6rem)}
+section.alt{background:var(--surface);border-block:1px solid var(--line)}
+.sh{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1rem 2rem;margin-bottom:2.5rem}
+.sh h2{font-size:var(--s3);font-weight:800;margin-top:.5rem}
+.sh p{max-width:34rem;color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem}
+.about > *{min-width:0}
+.prose{display:grid;gap:1rem;font-size:1.05rem}
+.prose p:first-child::first-letter{font-family:var(--f-display);font-weight:800;font-size:3.4em;float:left;line-height:.85;margin:.06em .1em 0 0;color:var(--accent)}
+.focus{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.focus li{display:flex;gap:.85rem;align-items:center;padding:.85rem 1rem;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-weight:500;font-size:.95rem;transition:transform .2s,border-color .2s}
+.focus li:hover{transform:translateX(4px);border-color:var(--accent)}
+.focus li::before{content:"";flex:none;width:.75rem;height:.75rem;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe0ad,var(--bead) 55%);box-shadow:0 0 0 3px color-mix(in srgb,var(--bead) 18%,transparent)}
+.goal{margin-top:2rem;padding:1.5rem 1.6rem;border-radius:14px;background:var(--deep);color:var(--deep-ink);position:relative;overflow:hidden}
+.goal::after{content:"";position:absolute;right:-2.5rem;top:-2.5rem;width:8rem;height:8rem;border-radius:50%;background:radial-gradient(circle,rgba(61,139,255,.45),transparent 70%)}
+.goal .eyebrow{color:var(--glow);margin-bottom:.5rem}
+.goal p:last-child{font-size:1.05rem;line-height:1.55;position:relative}
+.interests{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.5rem}
+
+/* research bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem}
+.proj{grid-column:span 3;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:1.6rem;display:flex;flex-direction:column;gap:.85rem;min-width:0;transition:transform .25s,box-shadow .25s,border-color .25s}
+.proj:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 18px 40px -24px color-mix(in srgb,var(--accent) 60%,transparent)}
+.proj.feature{grid-column:span 6;display:grid;grid-template-columns:1.05fr 1fr;gap:2rem;background:var(--deep);color:var(--deep-ink);border-color:transparent;padding:2rem}
+.proj.feature > *{min-width:0}
+.proj.feature .txt{display:flex;flex-direction:column;gap:.9rem}
+.proj .tag{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bead)}
+.proj.feature .tag{color:var(--glow)}
+.proj h3{font-size:1.45rem;font-weight:700;line-height:1.15}
+.proj.feature h3{font-size:clamp(1.6rem,3vw,2.2rem)}
+.proj p{color:var(--muted);font-size:.95rem}
+.proj.feature p{color:var(--deep-muted)}
+.methods{display:flex;flex-wrap:wrap;gap:.35rem}
+.methods span{font-family:var(--f-mono);font-size:.72rem;padding:.22rem .55rem;background:var(--accent-soft);color:var(--accent);border-radius:5px}
+.proj.feature .methods span{background:rgba(61,139,255,.14);color:#9cc4ff}
+.output{margin-top:auto;padding-top:.9rem;border-top:1px dashed var(--line);font-size:var(--s-1);color:var(--muted)}
+.proj.feature .output{border-color:rgba(255,255,255,.14);color:var(--deep-muted)}
+.output b{color:var(--ink)}
+.proj.feature .output b{color:var(--deep-ink)}
+.proj.feature .output a{color:#9cc4ff}
+.doi{font-family:var(--f-mono);word-break:break-all}
+.spec{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1rem;margin:0;align-self:center}
+.spec svg{display:block;width:100%;height:auto}
+.spec figcaption{font-size:.75rem;color:var(--deep-muted);margin-top:.5rem;line-height:1.45}
+
+/* timeline */
+.cols{display:grid;grid-template-columns:1.35fr 1fr;gap:3.5rem}
+.cols > *{min-width:0}
+.cols h3.colh{font-size:var(--s2);font-weight:700;margin-bottom:1.5rem}
+.rail{list-style:none;margin:0;padding:0 0 0 1.6rem;position:relative;display:grid;gap:2rem}
+.rail::before{content:"";position:absolute;left:.4rem;top:.4rem;bottom:.4rem;width:2px;background:linear-gradient(var(--accent),var(--bead))}
+.rail > li{position:relative}
+.rail > li::before{content:"";position:absolute;left:-1.6rem;top:.3rem;width:.95rem;height:.95rem;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.rail > li.now::before{background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 22%,transparent)}
+.when{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.rail h4{font-size:1.25rem;font-weight:700;margin-top:.2rem}
+.org{color:var(--accent);font-weight:500;font-size:.95rem;margin-top:.15rem}
+.rail ul{margin:.6rem 0 0;padding-left:1.1rem;display:grid;gap:.3rem;font-size:.95rem}
+.rail ul li::marker{color:var(--bead)}
+.note{color:var(--muted);font-size:.95rem;margin-top:.45rem}
+.edu{display:grid;gap:1rem}
+.edu article{padding:1.3rem 1.4rem;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+.edu article.cur{background:var(--deep);color:var(--deep-ink);border-color:transparent}
+.edu article.cur .when,.edu article.cur .note{color:var(--deep-muted)}
+.edu article.cur .org{color:var(--glow)}
+.edu h4{font-size:1.2rem;font-weight:700;margin-top:.25rem}
+
+/* pubs */
+.pubs{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.pubs li{display:grid;grid-template-columns:6.5rem 1fr auto;gap:1.5rem;align-items:baseline;padding-block:1.4rem;border-bottom:1px solid var(--line);transition:background .2s}
+.pubs li > *{min-width:0}
+.pubs .yr{font-family:var(--f-display);font-weight:800;font-size:1.7rem;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1}
+.pubs .yr small{display:block;font-family:var(--f-mono);font-size:.68rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.35rem}
+.pubs .t{font-family:var(--f-display);font-size:1.2rem;font-weight:600;line-height:1.25;letter-spacing:-.01em}
+.pubs .a{font-size:.9rem;color:var(--muted);margin-top:.3rem}
+.pubs .a u{text-decoration:none;color:var(--ink);font-weight:600}
+.pubs .v{font-size:.9rem;margin-top:.15rem}
+.pubs .v i{font-weight:600}
+.pubs .go{font-family:var(--f-mono);font-size:.75rem;white-space:nowrap;padding:.4rem .75rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;transition:border-color .2s,background .2s}
+.pubs .go:hover{border-color:var(--accent);background:var(--accent-soft)}
+.prep{margin-top:1.75rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap;padding:1.1rem 1.3rem;border:1.5px dashed var(--bead);border-radius:14px}
+.prep .eyebrow{color:var(--bead)}
+.prep p:last-child{flex:1;min-width:14rem;font-weight:500}
+.profiles{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.75rem}
+
+/* skills */
+.inst{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:.75rem;margin-bottom:2.5rem}
+.inst div{padding:1rem;border-radius:14px;background:var(--bg);border:1px solid var(--line);transition:transform .2s,border-color .2s}
+.inst div:hover{transform:translateY(-3px);border-color:var(--accent)}
+.inst b{display:block;font-family:var(--f-display);font-size:1.5rem;font-weight:800;color:var(--accent);letter-spacing:-.02em}
+.inst span{font-size:.8rem;color:var(--muted);line-height:1.35;display:block;margin-top:.15rem}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:2.25rem}
+.skills > div{min-width:0}
+.skills h4{font-family:var(--f-mono);font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--bead);padding-bottom:.6rem;border-bottom:2px solid var(--ink);margin-bottom:.7rem}
+.skills ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem;font-size:.95rem}
+
+/* credentials */
+.cred{display:grid;grid-template-columns:1.15fr 1fr;gap:3rem}
+.cred > *{min-width:0}
+.cert{list-style:none;margin:0;padding:0}
+.cert li{display:grid;grid-template-columns:1fr auto;gap:1rem;padding-block:.75rem;border-bottom:1px solid var(--line);font-size:.95rem}
+.cert li > span:first-child{min-width:0;font-weight:500}
+.cert .yr{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.cert small{display:block;color:var(--muted);font-size:var(--s-1);font-weight:400}
+.cert li.top{padding-block:1rem}
+.cert li.top > span:first-child{font-family:var(--f-display);font-size:1.25rem;font-weight:700}
+.awards{display:grid;gap:1rem}
+.award{position:relative;padding:1.4rem 1.5rem 1.4rem 4.5rem;border-radius:16px;background:var(--bg);border:1px solid var(--line)}
+.award::before{content:"";position:absolute;left:1.4rem;top:1.5rem;width:2.1rem;height:2.1rem;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe2b3,var(--bead) 50%,#7a4a12);box-shadow:0 6px 16px -6px var(--bead)}
+.award .yr{font-family:var(--f-mono);font-size:.75rem;color:var(--bead)}
+.award h4{font-size:1.25rem;font-weight:700;margin:.2rem 0 .3rem}
+.award p{color:var(--muted);font-size:.92rem}
+
+/* conferences */
+.confs{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
+.conf{padding:1.5rem;border-radius:16px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:.45rem;min-width:0}
+.conf .when{color:var(--accent)}
+.conf h4{font-size:1.3rem;font-weight:700}
+.conf .org{color:var(--muted);font-weight:400;font-size:.9rem}
+.conf p:last-child{font-size:.95rem}
+
+/* contact */
+.contact{background:var(--deep);color:var(--deep-ink);position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;width:34rem;height:34rem;right:-10rem;top:-12rem;border-radius:50%;background:radial-gradient(circle,rgba(61,139,255,.28),transparent 65%)}
+.contact::after{content:"";position:absolute;width:16rem;height:16rem;left:-5rem;bottom:-6rem;border-radius:50%;background:radial-gradient(circle,rgba(240,180,94,.22),transparent 65%)}
+.contact .wrap{position:relative;display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;padding-block:clamp(4rem,9vw,6.5rem)}
+.contact .wrap > *{min-width:0}
+.contact .eyebrow{color:var(--glow)}
+.contact h2{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;margin-block:.6rem 1.25rem;line-height:.95}
+.contact p{color:var(--deep-muted);font-size:1.05rem;max-width:34rem}
+.roles{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.4rem}
+.roles span{font-size:.8rem;padding:.32rem .75rem;border-radius:999px;border:1px solid rgba(230,242,245,.2);color:var(--deep-ink)}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:1.6rem;backdrop-filter:blur(6px)}
+.card dl{margin:0;display:grid;gap:1rem}
+.card dt{font-size:.7rem;font-family:var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--deep-muted)}
+.card dd{margin:.15rem 0 0;font-size:.98rem;word-break:break-word;color:var(--deep-ink)}
+.card a{color:#9cc4ff}
+.copy{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.copy code{font-family:var(--f-mono);font-size:.9rem;user-select:all}
+.copy button{font:inherit;font-size:.72rem;padding:.25rem .65rem;border:1px solid rgba(240,180,94,.5);background:transparent;color:var(--glow);border-radius:999px;cursor:pointer}
+footer{background:var(--deep);color:var(--deep-muted);font-size:var(--s-1);border-top:1px solid rgba(255,255,255,.07)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding-block:1.6rem}
+
+@media (max-width: 900px){
+  .about,.cols,.cred,.contact .wrap{grid-template-columns:1fr}
+  .proj.feature{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr 1fr}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .stat:nth-child(n+3){border-top:1px solid rgba(255,255,255,.08)}
+}
+@media (max-width: 620px){
+  .proj{grid-column:span 6}
+  .confs,.skills{grid-template-columns:1fr}
+  .pubs li{grid-template-columns:1fr;gap:.5rem}
+  .pubs .yr{font-size:1.3rem}
+  .pubs .yr small{display:inline;margin-left:.5rem}
+  .pubs .go{justify-self:start}
+  .mark .full{display:none}
+  .hero::after{background:linear-gradient(180deg,rgba(6,20,28,.7),var(--deep) 85%)}
+}
+@media (min-width: 621px){.mark .short{display:none}}
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top"><i>TB</i><span class="full">Taiwo Bakare-Abidola</span><span class="short">Bakare-Abidola</span></a>
+    <nav aria-label="Sections"><ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#conferences">Conferences</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="beads" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">Environmental Scientist · Georgia Southern University</p>
+    <h1>Taiwo <span>Bakare-</span>Abidola</h1>
+    <div class="creds"><b>Ph.D. Candidate</b><b>CEP-IT</b><span>Environmental Chemistry · Water &amp; Wastewater Treatment · Sustainable Materials</span></div>
+    <p class="lede">I engineer sustainable adsorbent beads that pull contaminants like <em>methylene blue</em> out of water, combining green chemistry, analytical instrumentation and statistical design to protect environmental and public health.</p>
+    <div class="ctas">
+      <a class="btn glow" href="https://drive.google.com/file/d/1zp0HTF9uNVuFoPCvLiqY-t4YynCEfLYz/view?usp=sharing" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Download Resume</a>
+      <a class="btn line" href="#research">Explore Research</a>
+      <a class="btn line" href="#publications">View Publications</a>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span><i style="background:var(--glow)"></i>alginate bead</span>
+      <span><i style="background:var(--dye)"></i>dye molecule</span>
+      <span>adsorption in progress</span>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>5</b><span>publications, incl. ACS Omega &amp; Chemosphere</span></div>
+    <div class="stat"><b>2013<small>→</small></b><span>in environmental health &amp; science</span></div>
+    <div class="stat"><b>7</b><span>analytical instruments, from FTIR to NMR</span></div>
+    <div class="stat"><b>2027</b><span>Ph.D. completion · open to roles</span></div>
+  </div>
+</div>
+
+<main>
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="sh"><div><p class="eyebrow">About</p><h2>Science for cleaner water</h2></div></div>
+      <div class="about">
+        <div>
+          <div class="prose">
+            <p>I am an environmental scientist, researcher and environmental health professional with an interdisciplinary background in microbiology, environmental resources management and environmental science. I hold a B.Sc. in Microbiology and an M.Sc. in Environmental Resources Management from Lagos State University, Nigeria, and I am completing a Ph.D. in Environmental Science at Georgia Southern University (Spring 2027).</p>
+            <p>My doctoral research designs and evaluates sustainable functional materials for removing hazardous and emerging contaminants from water, particularly natural deep eutectic solvent (NADES) modified alginate composites and functionalized ionic-liquid-based materials (GUMBOS). The work centres on response surface methodology, adsorption kinetics, equilibrium modeling and analytical characterization.</p>
+            <p>Beyond research, I bring field experience in environmental health, environmental supervision, waste management, laboratory safety and undergraduate teaching across Nigeria and the United States.</p>
+          </div>
+          <div class="goal">
+            <p class="eyebrow">Professional goal</p>
+            <p>To apply my research expertise and analytical problem-solving to advance sustainable water management, environmental protection and public health in industry, consulting, government or research institutions.</p>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow" style="margin-bottom:1rem">Professional focus</p>
+          <ul class="focus">
+            <li>Water and wastewater treatment technologies</li>
+            <li>Environmental chemistry and analytical characterization</li>
+            <li>Emerging contaminants and environmental remediation</li>
+            <li>Sustainable adsorbent materials and green chemistry</li>
+            <li>Environmental monitoring, risk assessment and compliance</li>
+            <li>R&amp;D, data analysis and scientific communication</li>
+          </ul>
+          <div class="interests">
+            <span class="chip">Environmental Remediation</span><span class="chip">Water Quality</span><span class="chip">Emerging Contaminants</span><span class="chip">Analytical Chemistry</span><span class="chip">Green Chemistry</span><span class="chip">Risk Assessment</span><span class="chip">Adsorption &amp; Extraction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="research">
+    <div class="wrap">
+      <div class="sh"><div><p class="eyebrow">Research projects</p><h2>From lab bench to clean water</h2></div><p>Environmental chemistry, microbiology, materials science and statistical modeling applied to water pollution, wastewater treatment and emerging contaminants.</p></div>
+      <div class="bento">
+        <article class="proj feature">
+          <div class="txt">
+            <span class="tag">Featured · Doctoral research · 2026</span>
+            <h3>Sustainable alginate–chitosan mt-NADES beads for dye removal</h3>
+            <p>Menthol–thymol natural deep eutectic solvent (mt-NADES) modified alginate–chitosan beads that extract synthetic dyes such as methylene blue from water, with operating conditions optimized by response surface methodology.</p>
+            <div class="methods"><span>RSM</span><span>UV-Vis</span><span>FTIR</span><span>SEM</span><span>TGA</span><span>Kinetics</span><span>Isotherms</span></div>
+            <p class="output"><b>Published:</b> ACS Omega 11(22), 32483–32498 (2026) · <a class="doi" href="https://doi.org/10.1021/acsomega.6c00978" target="_blank" rel="noopener">10.1021/acsomega.6c00978</a></p>
+          </div>
+          <figure class="spec">
+            <svg id="spec" viewBox="0 0 400 240" role="img" aria-label="Schematic UV-Vis spectrum of methylene blue with absorbance falling over contact time"></svg>
+            <figcaption>Schematic of the measurement: methylene blue absorbance at λmax ≈ 664 nm falls as beads take up the dye. Illustrative, not study data.</figcaption>
+          </figure>
+        </article>
+        <article class="proj">
+          <span class="tag">Doctoral research · Ionic liquids</span>
+          <h3>GUMBOS–magnetic alginate beads</h3>
+          <p>Dodecyl-methyl imidazolium dodecyl sulfate GUMBOS combined with magnetic alginate for efficient, magnetically recoverable extraction of methylene blue from aqueous solution.</p>
+          <div class="methods"><span>GUMBOS</span><span>Magnetic composites</span><span>Extraction</span><span>Characterization</span></div>
+          <p class="output"><b>Published:</b> Chemosphere 370, 143991 (2025) · <a class="doi" href="https://doi.org/10.1016/j.chemosphere.2024.143991" target="_blank" rel="noopener">DOI</a></p>
+        </article>
+        <article class="proj">
+          <span class="tag">In preparation · Column studies</span>
+          <h3>Alginate DES beads for malachite green removal</h3>
+          <p>Extending deep eutectic solvent beads to malachite green, with RSM optimization and dynamic column studies that move the material toward continuous-flow treatment.</p>
+          <div class="methods"><span>RSM</span><span>Fixed-bed column</span><span>Breakthrough curves</span></div>
+          <p class="output"><b>Status:</b> manuscript in preparation</p>
+        </article>
+        <article class="proj">
+          <span class="tag">M.Sc. research · Industrial wastewater</span>
+          <h3>Abattoir wastewater contamination</h3>
+          <p>Physicochemical water-quality characteristics and heavy metal pollution in wastewater discharged from abattoir operations in Lagos, Nigeria.</p>
+          <div class="methods"><span>Field sampling</span><span>Heavy metals</span><span>AAS</span></div>
+          <p class="output"><b>Published:</b> GSC Adv. Res. Rev. 22(3) (2025); Path of Science (2025)</p>
+        </article>
+        <article class="proj">
+          <span class="tag">B.Sc. research · Microbiology</span>
+          <h3>Coliforms in public water supplies</h3>
+          <p>Coliform contamination in Lagos State public water supplies, identified with classical microbiology and molecular techniques.</p>
+          <div class="methods"><span>Multiple-tube fermentation</span><span>API</span><span>PCR</span></div>
+          <p class="output"><b>Published:</b> World J. Adv. Res. Rev. 25(03), 761–772 (2025)</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="sh"><div><p class="eyebrow">Career</p><h2>Experience &amp; education</h2></div></div>
+      <div class="cols">
+        <div>
+          <h3 class="colh">Professional experience</h3>
+          <ol class="rail">
+            <li class="now"><span class="when">2023 – PRESENT</span><h4>Graduate Research Assistant</h4><p class="org">Georgia Southern University, USA</p>
+              <ul>
+                <li>Develop and evaluate sustainable adsorbent materials for contaminant removal from aqueous systems.</li>
+                <li>Design experiments on adsorption, contaminant removal and material performance using RSM, kinetic and equilibrium modeling.</li>
+                <li>Characterize materials with UV-Vis, FTIR, SEM and TGA; analyze results with statistical tools.</li>
+                <li>Support lab QA/QC, safe chemical handling, documentation and technical reporting.</li>
+                <li>Prepare manuscripts, research presentations and technical documents.</li>
+              </ul></li>
+            <li class="now"><span class="when">2023 – PRESENT</span><h4>Graduate Teaching Assistant</h4><p class="org">Georgia Southern University, USA</p>
+              <ul>
+                <li>Support undergraduate chemistry laboratory instruction and lab safety.</li>
+                <li>Guide students on experimental technique and data analysis; evaluate lab assignments.</li>
+              </ul></li>
+            <li><span class="when">2021 – 2023</span><h4>Environmental Scientist</h4><p class="org">Akydat Agro Concept Limited, Nigeria</p>
+              <ul>
+                <li>Supported environmental monitoring, assessment and sustainability activities.</li>
+                <li>Contributed to environmental documentation, reporting and risk evaluation.</li>
+              </ul></li>
+            <li><span class="when">2014 – 2016</span><h4>Environmental Health Officer</h4><p class="org">Lagos State Primary Health Care Board, Nigeria</p>
+              <ul>
+                <li>Supported environmental health and public health protection programs.</li>
+                <li>Conducted sanitation, monitoring, inspections and health documentation; supported corrective actions.</li>
+              </ul></li>
+            <li><span class="when">2013 – 2014</span><h4>Environmental Supervisor</h4><p class="org">Lagos Waste Management Authority (LAWMA), Nigeria</p>
+              <ul>
+                <li>Supported sanitation and waste management operations and compliance monitoring.</li>
+                <li>Contributed to environmental protection and operational reporting.</li>
+              </ul></li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="colh">Education</h3>
+          <div class="edu">
+            <article class="cur"><span class="when">2023 – SPRING 2027</span><h4>Ph.D., Environmental Science</h4><p class="org">Georgia Southern University · Statesboro, GA</p><p class="note">Sustainable water treatment, environmental chemistry, emerging contaminants and remediation. Dean's Ph.D. Fellow.</p></article>
+            <article><span class="when">2019</span><h4>M.Sc., Environmental Resources Management</h4><p class="org">Lagos State University, Nigeria</p><p class="note">Heavy metal contamination and physicochemical assessment of abattoir wastewater.</p></article>
+            <article><span class="when">2011</span><h4>B.Sc., Microbiology</h4><p class="org">Lagos State University, Nigeria</p><p class="note">Detection of coliform bacteria in public water supplies.</p></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="publications">
+    <div class="wrap">
+      <div class="sh"><div><p class="eyebrow">Scholarship</p><h2>Publications</h2></div><p>Peer-reviewed work in environmental chemistry, emerging contaminants, water treatment and environmental health, plus review articles on microbial detection, nanomedicine and liquid biopsy.</p></div>
+      <ol class="pubs">
+        <li><span class="yr">2026<small>ACS Omega</small></span><div>
+          <p class="t">Development of mt-NADES Beads and Optimization for Efficient Extraction of Methylene Blue Using Response Surface Method</p>
+          <p class="a"><u>Bakare-Abidola T</u>, Smerjac SK, Jorgensen K, Russell WJA, Khandge RS, Pérez RL.</p>
+          <p class="v"><i>ACS Omega</i> 11(22), 32483–32498 · PMID 42294164</p></div>
+          <a class="go" href="https://doi.org/10.1021/acsomega.6c00978" target="_blank" rel="noopener">DOI ↗</a></li>
+        <li><span class="yr">2025<small>Chemosphere</small></span><div>
+          <p class="t">Enhanced Extraction of Methylene Blue by Dodecyl-Methyl Imidazolium Dodecyl Sulfate GUMBOS – Magnetic Alginate Beads</p>
+          <p class="a"><u>Bakare-Abidola T</u>, Russell WJA, Jorgensen K, Pérez RL.</p>
+          <p class="v"><i>Chemosphere</i> 370, Art. 143991</p></div>
+          <a class="go" href="https://doi.org/10.1016/j.chemosphere.2024.143991" target="_blank" rel="noopener">DOI ↗</a></li>
+        <li><span class="yr">2025<small>Path of Science</small></span><div>
+          <p class="t">Environmental Impact Assessment of Abattoir Wastewater</p>
+          <p class="a"><u>Bakare-Abidola T</u>, Elabor I, Onwuchekwa N, Onwuchekwa C, Oladeji J, Olawale AO, Adeiza AA.</p>
+          <p class="v"><i>Path of Science</i></p></div>
+          <a class="go" href="https://doi.org/10.22178/pos.119-16" target="_blank" rel="noopener">DOI ↗</a></li>
+        <li><span class="yr">2025<small>GSC ARR</small></span><div>
+          <p class="t">Environmental Assessment of Heavy Metal Contamination and Physicochemical Properties in Abattoir Wastewater</p>
+          <p class="a"><u>Taiwo BA</u>, Jelil O, Oluwafemi SY.</p>
+          <p class="v"><i>GSC Advanced Research and Reviews</i> 22(3), 92–102</p></div>
+          <span></span></li>
+        <li><span class="yr">2025<small>WJARR</small></span><div>
+          <p class="t">Isolation and Identification of Coliforms from Public Water Supplies in Lagos State, Nigeria</p>
+          <p class="a"><u>Taiwo B</u>, Jelil O, Adewole OA.</p>
+          <p class="v"><i>World Journal of Advanced Research and Reviews</i> 25(03), 761–772</p></div>
+          <span></span></li>
+      </ol>
+      <div class="prep"><p class="eyebrow">In preparation</p><p>Sustainable Alginate DES Beads for Malachite Green Removal via Response Surface Methodology Optimization and Dynamic Column Studies</p></div>
+      <div class="profiles">
+        <a class="chip" href="https://scholar.google.com/citations?user=OHnZy70AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>
+        <a class="chip" href="https://orcid.org/0009-0002-7483-7754" target="_blank" rel="noopener">ORCID ↗</a>
+        <a class="chip" href="https://www.researchgate.net/profile/Taiwo-Bakare-Abidola" target="_blank" rel="noopener">ResearchGate ↗</a>
+        <a class="chip" href="https://www.linkedin.com/in/taiwo-bakare-abidola" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="chip" href="https://github.com/TaiwoBakare" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="wrap">
+      <div class="sh"><div><p class="eyebrow">Toolkit</p><h2>Technical skills</h2></div><p>Hands-on instrumentation, statistical design and environmental compliance experience.</p></div>
+      <div class="inst">
+        <div><b>UV-Vis</b><span>Ultraviolet–visible spectroscopy</span></div>
+        <div><b>FTIR</b><span>Fourier-transform infrared</span></div>
+        <div><b>SEM</b><span>Scanning electron microscopy</span></div>
+        <div><b>TGA</b><span>Thermogravimetric analysis / DTG</span></div>
+        <div><b>AAS</b><span>Atomic absorption spectroscopy</span></div>
+        <div><b>HPLC</b><span>High-performance liquid chromatography</span></div>
+        <div><b>NMR</b><span>Nuclear magnetic resonance</span></div>
+      </div>
+      <div class="skills">
+        <div><h4>Environmental science</h4><ul>
+          <li>Water-quality assessment</li><li>Water &amp; wastewater treatment research</li><li>Environmental monitoring &amp; sampling</li><li>Environmental risk assessment</li><li>Emerging contaminant analysis</li><li>Industrial wastewater characterization</li><li>Heavy metal contamination assessment</li><li>Pollution prevention &amp; remediation</li></ul></div>
+        <div><h4>Research &amp; modeling</h4><ul>
+          <li>Response Surface Methodology (RSM)</li><li>Design of Experiments (DOE)</li><li>Box–Behnken &amp; Central Composite designs</li><li>Adsorption kinetics &amp; equilibrium</li><li>Langmuir &amp; Freundlich isotherms</li><li>Experimental optimization</li><li>Statistical analysis &amp; visualization</li></ul></div>
+        <div><h4>Software</h4><ul>
+          <li>R</li><li>JMP</li><li>MATLAB</li><li>IBM SPSS</li><li>Origin / OriginPro</li><li>ArcGIS &amp; QGIS</li><li>Microsoft Excel</li></ul></div>
+        <div><h4>Lab practice</h4><ul>
+          <li>Sample preparation &amp; chemical analysis</li><li>Good Laboratory Practice (GLP)</li><li>QA/QC</li><li>Laboratory chemical safety</li></ul></div>
+        <div><h4>Health, safety &amp; compliance</h4><ul>
+          <li>Hazard identification &amp; risk assessment</li><li>Hazardous materials awareness</li><li>Environmental health &amp; sanitation</li><li>Waste management</li><li>Compliance support &amp; reporting</li></ul></div>
+        <div><h4>Professional</h4><ul>
+          <li>Technical writing &amp; communication</li><li>Presentations &amp; public speaking</li><li>Interdisciplinary collaboration</li><li>Project &amp; time management</li><li>Lab instruction &amp; mentorship</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="credentials">
+    <div class="wrap">
+      <div class="sh"><div><p class="eyebrow">Credentials</p><h2>Certifications &amp; awards</h2></div></div>
+      <div class="cred">
+        <ul class="cert">
+          <li class="top"><span>Certified Environmental Professional-in-Training (CEP-IT)<small>Academy of Board Certified Environmental Professionals</small></span><span class="yr">2026</span></li>
+          <li class="top"><span>OSHA 40-Hour HAZWOPER</span><span class="yr">2026</span></li>
+          <li><span>Environmental Health &amp; Occupational Safety Training</span><span class="yr">2026</span></li>
+          <li><span>Region 6 South Central Public Health Training Center<small>E010 Occupational Health &amp; Safety · E001 General Environmental Health</small></span><span class="yr">2026</span></li>
+          <li><span>FEMA ICS-100, ICS-200 &amp; NIMS</span><span class="yr">2025</span></li>
+          <li><span>FEMA / NDEMU Hazardous Materials &amp; Emergency Management</span><span class="yr">2025</span></li>
+          <li><span>CITI Research Ethics &amp; Laboratory Safety<small>Lab chemical safety · hazard communication</small></span><span class="yr">2025</span></li>
+          <li><span>Arizona State University Water / Wastewater Courses</span><span class="yr">2025</span></li>
+          <li><span>Esri Spatial Data Science</span><span class="yr">2024</span></li>
+          <li><span>Georgia Southern: Hazardous Waste Awareness · Right-to-Know / GHS</span><span class="yr">GSU</span></li>
+        </ul>
+        <div class="awards">
+          <div class="award"><span class="yr">2025 – 2026</span><h4>Dean's Ph.D. Fellowship</h4><p>College of Science and Mathematics, Georgia Southern University, for doctoral research excellence and academic potential.</p></div>
+          <div class="award"><span class="yr">2026</span><h4>NCEC Student Scholarship Finalist</h4><p>Finalist in the inaugural North Carolina Environmental Conference Student Scholarship Program.</p></div>
+          <div class="award"><span class="yr">2025</span><h4>Best Reviewer Recognition</h4><p>For contributions to scientific peer review and scholarly evaluation.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="conferences">
+    <div class="wrap">
+      <div class="sh"><div><p class="eyebrow">Engagement</p><h2>Conferences &amp; presentations</h2></div><p>Sharing findings, building collaborations and staying current with environmental chemistry and water technology.</p></div>
+      <div class="confs">
+        <article class="conf"><span class="when">2024 · 2026</span><h4>American Chemical Society</h4><p class="org">SERMACS 2024, Florida · Spring 2026 National Meeting, Atlanta · ENVR Division, Aug 2026</p><p>Presented research on advanced materials and sustainable environmental remediation.</p></article>
+        <article class="conf"><span class="when">2024 · 2025 · 2026</span><h4>NOBCChE</h4><p class="org">National Organization for the Professional Advancement of Black Chemists and Chemical Engineers</p><p>Graduate research posters on functional materials for environmental contaminant removal.</p></article>
+        <article class="conf"><span class="when">2026</span><h4>North Carolina Environmental Conference</h4><p class="org">Student Scholarship Program Finalist</p><p>Engagement on water quality, wastewater treatment and environmental technologies.</p></article>
+        <article class="conf"><span class="when">2026</span><h4>ACS Green Chemistry Institute Summer School</h4><p class="org">University of Vermont</p><p>Training in sustainable chemistry, green chemical processes and environmental innovation.</p></article>
+      </div>
+      <div class="interests">
+        <span class="chip">Manuscript preparation &amp; peer review</span><span class="chip">Poster &amp; oral presentations</span><span class="chip">ABCEP professional mentorship</span><span class="chip">Undergraduate research mentorship</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Resume &amp; contact</p>
+      <h2>Let's work on cleaner water.</h2>
+      <p>I welcome opportunities in environmental consulting, R&amp;D, water quality, wastewater treatment, remediation, environmental chemistry and risk assessment.</p>
+      <div class="roles"><span>Environmental Scientist</span><span>Research Scientist</span><span>Environmental Consultant</span><span>Environmental Chemist</span><span>Water Quality</span><span>EHS</span></div>
+      <div class="ctas">
+        <a class="btn glow" href="https://drive.google.com/file/d/1zp0HTF9uNVuFoPCvLiqY-t4YynCEfLYz/view?usp=sharing" target="_blank" rel="noopener">Download Resume</a>
+        <a class="btn line" href="https://www.linkedin.com/in/taiwo-bakare-abidola" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+    <div class="card">
+      <dl>
+        <div><dt>Name</dt><dd>Taiwo Temitope Bakare-Abidola, Ph.D. Candidate, CEP-IT</dd></div>
+        <div><dt>Location</dt><dd>Georgia Southern University · Statesboro, Georgia, USA</dd></div>
+        <div><dt>Email</dt><dd class="copy"><code id="email">bakareabidolataiwo@gmail.com</code><button type="button" id="copyEmail">Copy</button></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/taiwo-bakare-abidola" target="_blank" rel="noopener">linkedin.com/in/taiwo-bakare-abidola</a></dd></div>
+        <div><dt>ORCID</dt><dd><a href="https://orcid.org/0009-0002-7483-7754" target="_blank" rel="noopener">0009-0002-7483-7754</a></dd></div>
+        <div><dt>Google Scholar</dt><dd><a href="https://scholar.google.com/citations?user=OHnZy70AAAAJ&amp;hl=en" target="_blank" rel="noopener">View profile</a></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap"><span>© 2026 Taiwo Bakare-Abidola</span><span>Environmental Science · Water &amp; Wastewater Treatment · Sustainable Materials</span></div></footer>
+
+<script>
+/* Hero: alginate beads drifting through water, absorbing blue dye particles. */
+(function(){
+  var c=document.getElementById('beads'); if(!c) return;
+  var ctx=c.getContext('2d'), W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,2);
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var beads=[],dye=[];
+  function rnd(a,b){return a+Math.random()*(b-a)}
+  function size(){var r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+  function seed(){
+    beads=[];dye=[];var n=Math.max(6,Math.round(W/110));
+    for(var i=0;i<n;i++){beads.push({x:rnd(W*.35,W),y:rnd(0,H),r:rnd(14,38),vx:rnd(-.12,.12),vy:rnd(-.25,-.06),load:rnd(0,.5),ph:rnd(0,6.28)})}
+    var m=Math.round(W*H/2600);for(var j=0;j<m;j++)dye.push(newDye(true));
+  }
+  function newDye(any){return{x:rnd(0,W),y:any?rnd(0,H):H+5,vx:rnd(-.25,.25),vy:rnd(-.35,-.08),a:rnd(.35,.9),r:rnd(1,2.2)}}
+  function bead(b){
+    var g=ctx.createRadialGradient(b.x-b.r*.35,b.y-b.r*.4,b.r*.1,b.x,b.y,b.r);
+    g.addColorStop(0,'rgba(255,226,170,.95)');g.addColorStop(.55,'rgba(232,166,80,.75)');g.addColorStop(1,'rgba(140,84,24,.35)');
+    ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,6.283);ctx.fillStyle=g;ctx.fill();
+    // absorbed dye tint
+    ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,6.283);ctx.fillStyle='rgba(40,110,230,'+(b.load*.55).toFixed(3)+')';ctx.fill();
+    ctx.beginPath();ctx.arc(b.x-b.r*.38,b.y-b.r*.42,b.r*.18,0,6.283);ctx.fillStyle='rgba(255,255,255,.55)';ctx.fill();
+    ctx.beginPath();ctx.arc(b.x,b.y,b.r+6,0,6.283);ctx.strokeStyle='rgba(240,180,94,.10)';ctx.lineWidth=1;ctx.stroke();
+  }
+  function frame(t){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<dye.length;i++){
+      var d=dye[i];
+      if(!reduce){d.x+=d.vx;d.y+=d.vy;}
+      for(var k=0;k<beads.length;k++){var b=beads[k],dx=b.x-d.x,dy=b.y-d.y,dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<b.r*2.6){d.x+=dx*.018;d.y+=dy*.018;if(dist<b.r){b.load=Math.min(1,b.load+.012);dye[i]=newDye(false);break}}}
+      if(d.y<-5||d.x<-5||d.x>W+5)dye[i]=newDye(false);
+      ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,6.283);ctx.fillStyle='rgba(61,139,255,'+d.a+')';ctx.fill();
+    }
+    for(var j=0;j<beads.length;j++){var b=beads[j];
+      if(!reduce){b.ph+=.01;b.x+=b.vx+Math.sin(b.ph)*.15;b.y+=b.vy;b.load=Math.max(0,b.load-.0006);
+        if(b.y<-b.r-10){b.y=H+b.r+10;b.x=rnd(W*.35,W);b.load=0}}
+      bead(b);
+    }
+    if(!reduce)requestAnimationFrame(frame);
+  }
+  size();seed();frame(0);
+  var to;window.addEventListener('resize',function(){clearTimeout(to);to=setTimeout(function(){size();seed();if(reduce)frame(0)},150)});
+})();
+
+/* Schematic methylene blue spectrum in the featured project. */
+(function(){
+  var svg=document.getElementById('spec'); if(!svg) return;
+  var NS='http://www.w3.org/2000/svg',L=42,R=388,T=14,B=196,x0=500,x1=750;
+  function X(n){return L+(n-x0)/(x1-x0)*(R-L)} function Y(a){return B-a*(B-T)}
+  function A(n){return .92*Math.exp(-Math.pow((n-664)/22,2))+.42*Math.exp(-Math.pow((n-612)/26,2))+.02}
+  function el(n,a,txt){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(txt)e.textContent=txt;svg.appendChild(e);return e}
+  var mono='JetBrains Mono, monospace',mut='#93b2bb';
+  [0,.25,.5,.75,1].forEach(function(a){el('line',{x1:L,x2:R,y1:Y(a),y2:Y(a),stroke:'rgba(255,255,255,.08)'});el('text',{x:L-6,y:Y(a)+4,'text-anchor':'end','font-size':10,fill:mut,'font-family':mono},a.toFixed(2))});
+  [500,550,600,650,700,750].forEach(function(n){el('text',{x:X(n),y:B+16,'text-anchor':'middle','font-size':10,fill:mut,'font-family':mono},String(n))});
+  el('text',{x:(L+R)/2,y:B+34,'text-anchor':'middle','font-size':10,fill:mut,'font-family':'Public Sans, sans-serif'},'Wavelength (nm)');
+  el('text',{x:11,y:(T+B)/2,'text-anchor':'middle','font-size':10,fill:mut,'font-family':'Public Sans, sans-serif',transform:'rotate(-90 11 '+(T+B)/2+')'},'Absorbance');
+  [1,.62,.36,.18,.07].forEach(function(s,i){var d='';for(var n=x0;n<=x1;n+=2)d+=(n===x0?'M':'L')+X(n).toFixed(1)+' '+Y(A(n)*s).toFixed(1);
+    el('path',{d:d,fill:'none',stroke:'#3d8bff','stroke-width':i?1.4:2.4,'stroke-opacity':(1-i*.17).toFixed(2)})});
+  el('line',{x1:X(664),x2:X(664),y1:T,y2:B,stroke:'#f0b45e','stroke-dasharray':'3 3'});
+  el('text',{x:X(664)+6,y:T+10,'font-size':10,fill:'#f0b45e','font-family':mono},'λmax 664');
+  el('text',{x:X(512),y:Y(.9),'font-size':10,fill:'#e6f2f5','font-family':'Public Sans, sans-serif'},'t = 0');
+  el('text',{x:X(512),y:Y(.78),'font-size':10,fill:mut,'font-family':'Public Sans, sans-serif'},'↓ contact time');
+})();
+
+document.getElementById('copyEmail').addEventListener('click',function(){
+  var b=this,node=document.getElementById('email');
+  function sel(){var r=document.createRange();r.selectNodeContents(node);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}
+  try{navigator.clipboard.writeText(node.textContent).then(function(){b.textContent='Copied'},sel)}catch(e){sel()}
+  setTimeout(function(){b.textContent='Copy'},2000);
+});
+</script>
